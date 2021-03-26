@@ -1,0 +1,9 @@
+{
+    "learner": "CRF",
+    "spacy_pipeline": "en_core_web_sm",
+    "spacy_features": ["text", "pos_", "suffix_", "prefix_", "shape_"],
+    "window_size": 3,
+    "tokenizer": "systematic_review",
+    "metamap": "/work/app/meta-map/bin",
+    "semantic_types": "all"
+}

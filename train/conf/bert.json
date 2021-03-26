@@ -1,0 +1,7 @@
+{
+    "learner": "BERT",
+    "spacy_pipeline": "en_core_web_sm",
+    "tokenizer": "systematic_review",
+    "metamap": "/work/app/meta-map/bin",
+    "semantic_types": "all"
+}
