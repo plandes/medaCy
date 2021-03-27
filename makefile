@@ -14,7 +14,6 @@ reinstall:	install
 .PHONY:		build
 build:		clean
 		python setup.py bdist_wheel
-		cp dist/* $(HOME)/opt/lib/python-dist/3.9
 
 .PHONY:		clean
 clean:
