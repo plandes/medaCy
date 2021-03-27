@@ -18,6 +18,7 @@ To build the [clinical model]:
    git repo: `make crfpkg`.
 5. Build/install the model: `( cd model_repos/medaCy_model_clinical_notes ;
    make reinstall && git commit -am 'model trained' )`
+6. Run the model: `make crftest`
 
 To build the [BERT model]:
 1. Train the model: `make bertmodel`
@@ -27,6 +28,7 @@ To build the [BERT model]:
    git repo: `make bertpkg`.
 5. Build/install the model: `( cd model_repos/medaCy_bert_model_clinical_notes ;
    make reinstall && git commit -am 'model trained' )`
+6. Run the model: `make berttest`
 
 
 <!-- links -->

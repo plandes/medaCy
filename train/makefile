@@ -15,7 +15,10 @@ CONFIG=		conf
 
 # model packages
 PKG_BIN=	python src/mkpkg.py
-PKG_DIR=	model_repos
+PKG_DIR ?=	model_repos
+
+# testing
+TEST_BIN=	python src/test.py
 
 # models
 CRF_NAME=	crf
@@ -90,6 +93,10 @@ crfpkg:
 		$(PKG_BIN) $(CRF_METRICS) $(CRF_MODEL) $(CRF_PKG_DIR)
 
 
+.PHONY:		crftest
+crftest:
+		$(TEST_BIN) crf
+
 # bert CRF
 .PHONY:		bertmodel
 bertmodel:	$(BERT_MODEL)
@@ -127,6 +134,10 @@ bertpkg:
 		fi
 		$(PKG_BIN) $(BERT_METRICS) $(BERT_MODEL) $(BERT_PKG_DIR) \
 			-dstmodel torch
+
+.PHONY:		berttest
+berttest:
+		$(TEST_BIN) bertcrf -cuda=0
 
 
 # clean

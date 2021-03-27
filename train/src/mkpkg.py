@@ -32,7 +32,7 @@ class MakePackage(object):
                     mets.append(line)
         return '\n'.join(mets)
 
-    def tmp(self):
+    def install(self):
         model_path = self.package / 'model'
         metrics_path = model_path / 'model_data.txt'
         logger.info(f'copying metrics to {metrics_path}')
@@ -65,9 +65,9 @@ class MakePackage(object):
     dstmodel=('The diredtory name to the destination model.', 'option', None, str),
     package=('The path to the package directory', 'positional', None, Path))
 def main(metrics: Path, srcmodel: Path, package: Path, dstmodel: str = None):
-    logging.basicConfig(level=logging.INFO)
+    logging.basicConfig(level=logging.INFO, format='%(message)s')
     mpkg = MakePackage(metrics, srcmodel, dstmodel, package)
-    mpkg.tmp()
+    mpkg.install()
 
 
 if __name__ == '__main__':
