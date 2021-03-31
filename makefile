@@ -19,3 +19,4 @@ build:		clean
 clean:
 		python setup.py clean
 		rm -fr medacy.egg-info dist build
+		find . -type d -name __pycache__ -prune -exec rm -r {} \;
